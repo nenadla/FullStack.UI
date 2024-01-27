@@ -25,4 +25,8 @@ export class EmployeesService {
   getEmployee(id: string): Observable<Employee>{
   return  this.http.get<Employee>(this.baseApiUrl + '/api/Employees/' + id)
   }
+
+  updateEmployee(id: string, updateEmployeeRequest: Employee): Observable<Employee>{
+   return  this.http.put<Employee>(this.baseApiUrl + '/api/Employees/' + id, updateEmployeeRequest);
+  }
 }
